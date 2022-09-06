@@ -1,0 +1,42 @@
+
+Test Case: Being able to remove a card from your selection
+Steps:
+1. Press the Draw button
+2. Click on 2 cards that you would like to pick.
+3. Click on the remove from duo button after adding a card
+Test Postconditions:
+- The card should be removed from your picked duo cards
+- The removed card should return to the list of cards to pick from
+
+
+
+Bug Report
+Win counter not correctly displaying
+Description:
+No matter the end result (win or loss) the losses ounter will always go up by 1.
+Steps to reproduce:
+1. navigate to your local host 3000 with the server listening on 3000
+2. Press the Draw button
+3. Add 2 cards to your duo
+3. Press the Duel! button on the bottom
+4. A screen should come up saying you won or lost.
+Expected Result:
+- When the end result screen shows: You Won!
+- Expected to see wins counter to go up by 1.
+Environment:
+Latest Chrome version
+windows 10
+
+
+Bug Report
+See all bots button not working.
+Description:
+Navigating to the "See All Bots" button and clicking on it yeilds no results
+Steps to reproduce:
+1. navigate to your local host 3000 with the server listening on 3000
+2. Navigate to the "See All Bots" button and click
+Expected Result:
+- All of the bots that you can choose from should appear
+Environment:
+Latest Chrome version
+windows 10
