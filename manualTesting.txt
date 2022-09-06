@@ -1,5 +1,7 @@
 
-Test Case: Being able to remove a card from your selection
+Test Case: Remove 
+Description:
+Being able to remove a card from your duo selection
 Steps:
 1. Press the Draw button
 2. Click on 2 cards that you would like to pick.
@@ -23,6 +25,8 @@ Steps to reproduce:
 Expected Result:
 - When the end result screen shows: You Won!
 - Expected to see wins counter to go up by 1.
+Actual Result:
+- Lossess counter goes up by 1 no matter if win or loss
 Environment:
 Latest Chrome version
 windows 10
@@ -37,6 +41,8 @@ Steps to reproduce:
 2. Navigate to the "See All Bots" button and click
 Expected Result:
 - All of the bots that you can choose from should appear
+Actual Result:
+- Nothing happenes
 Environment:
 Latest Chrome version
 windows 10
