@@ -6,21 +6,38 @@ const {shuffleArray} = require('./utils')
 
 app.use(express.json())
 
+
+// include and initialize the rollbar library with your access token
+var Rollbar = require('rollbar')
+var rollbar = new Rollbar({
+  accessToken: 'f3d4c1708a2840708e52a146428f1bd4',
+  captureUncaught: true,
+  captureUnhandledRejections: true,
+})
+
+// record a generic message and send it to Rollbar
+rollbar.log('Hello world!')
+
+
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, "./public/index.html"))
+    rollbar.info('Getting the HTML')
 })
 
 app.get('/styles', (req, res) => {
     res.sendFile(path.join(__dirname, "./public/index.css"))
+    rollbar.info('Getting the CSS')
 })
 
 app.get('/js', (req, res) => {
     res.sendFile(path.join(__dirname, "./public/index.js"))
+    rollbar.info('Getting the JS')
 })
 
 app.get('/api/robots', (req, res) => {
     try {
         res.status(200).send(botsArr)
+        rollbar.log('Sent Robots')
     } catch (error) {
         console.log('ERROR GETTING BOTS', error)
         res.sendStatus(400)
@@ -43,6 +60,7 @@ app.post('/api/duel', (req, res) => {
     try {
         // getting the duos from the front end
         let {compDuo, playerDuo} = req.body
+        rollbar.log('Ready to Go')
 
         // adding up the computer player's total health and attack damage
         let compHealth = compDuo[0].health + compDuo[1].health
